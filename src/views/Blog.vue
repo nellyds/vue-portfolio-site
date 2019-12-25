@@ -32,4 +32,6 @@ methods: {
 }
 </script>
 <style>
+
+
 </style>
