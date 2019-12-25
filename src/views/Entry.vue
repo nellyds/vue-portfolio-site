@@ -20,10 +20,10 @@ data(){
 methods: {},
 beforeMount(){
     var entryId = this.$route.params.id;
-    this.$http.get("http://127.0.0.1:5000/get?id="+entryId).then(function(data)
+    this.$http.get("http://127.0.0.1:5000/getEntry?id="+entryId).then(function(data)
     {
-        
-        this.blogItem = data.body.entry;
+       this.blogItem = data.body.entry;
+
     })    
 }
 }

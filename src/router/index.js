@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import Entry from '../views/Entry.vue';
 
 Vue.use(VueRouter);
 
@@ -30,7 +31,13 @@ const routes = [
     path: '/work',
     name: 'work',
     component: () => import('../views/Work.vue')
+  },
+  {
+    path: '/entry/:id',
+    name: 'entry',
+    component: () => import('../views/Entry.vue')
   }
+
 
 ];
 

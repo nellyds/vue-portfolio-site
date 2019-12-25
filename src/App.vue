@@ -7,15 +7,22 @@
         <router-link to="/blog">Blog</router-link>
         <router-link to="/work">Work</router-link>
     </div>
-<transition name="fade" mode="out-in">
+    <transition name="page" mode="out-in">
         <router-view></router-view>
-</transition>
+    </transition>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'App'
+    name: 'App',
+ 
+
+        methods: {
+
+      },
+
+
 };
 </script>
 
@@ -39,5 +46,24 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
+}
+.page-enter-active, .page-leave-active {
+  transition: opacity 1s, transform 1s;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+  transform: translateY(-30%);
 }
 </style>
