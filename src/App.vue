@@ -8,7 +8,7 @@
         <router-link to="/work">Work</router-link>
     </div>
     <transition name="page" mode="out-in">
-        <router-view></router-view>
+        <router-view id="box"></router-view>
     </transition>
   </div>
 </template>
@@ -27,12 +27,15 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|Turret+Road&display=swap');
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  background-color: rgb(16, 16, 19);
+  color:white;;
 }
 
 #nav {
@@ -40,12 +43,13 @@ export default {
 }
 
 #nav a {
+  font-family: 'Turret Road';
   font-weight: bold;
-  color: #2c3e50;
+  color: #ffffff;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: white;
 }
 
 .fade-enter-active,
@@ -65,5 +69,47 @@ export default {
 .page-enter, .page-leave-to {
   opacity: 0;
   transform: translateY(-30%);
+}
+
+#box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  color: white;
+  font-family: 'Raleway';
+  font-size: 2.5rem;
+}
+.gradient-border {
+  --borderWidth: 3px;
+  background: #1D1F20;
+  position: relative;
+  border-radius: var(--borderWidth);
+}
+.gradient-border:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(30deg, #3f8c8e, #136e7f, #f37055, #7f133e);
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 </style>
