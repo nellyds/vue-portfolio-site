@@ -1,21 +1,19 @@
 <template>
 
   <div class="blog">
-    <h1>This is where the blog will be</h1>
     <paginate name="entries" :list="entries">
-      <li v-for="entry in paginated('entries')" :key="entry.id">
-              <h2 class="accordion">{{entry.title}}</h2>
+      <div class="entry_title" v-for="entry in paginated('entries')" :key="entry.id">
       
      
-     <router-link v-bind:to="'entry/' + entry.id">{{entry.title}}</router-link>}
-        </li>
+     <router-link v-bind:to="'entry/' + entry.id">{{entry.title}}</router-link>
+      </div>
     </paginate>
 
       <paginate-links for="entries" :show-step-links="true"></paginate-links>
-  <paginate-links for="entries" :limit="2" :show-step-links="true"></paginate-links>
+  <paginate-links for="entries" :limit="5" :show-step-links="true"></paginate-links>
   <paginate-links for="entries" :simple="{
-        next: 'Next »',
-        prev: '« Back'
+        next: ' »',
+        prev: '« '
       }"></paginate-links>
   </div>
 </template>
@@ -41,4 +39,11 @@ methods: {
 }
 </script>
 <style>
+.entry_title{
+  font-family: 'hyper'
+}
+li{
+  list-style: none;
+}
+
 </style>

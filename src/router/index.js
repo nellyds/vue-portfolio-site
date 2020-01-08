@@ -36,8 +36,6 @@ const routes = [
     name: 'entry',
     component: () => import('../views/Entry.vue')
   }
-
-
 ];
 
 const router = new VueRouter({
