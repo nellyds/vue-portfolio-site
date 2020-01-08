@@ -7,8 +7,6 @@
         right 
         class="nav"
       >
-
-
       <v-list-item>
       <router-link to="/">Home</router-link> 
       </v-list-item>
@@ -22,20 +20,14 @@
       <v-list-item>
       <router-link to="/work">Work</router-link>
       </v-list-item>
-      
             </v-navigation-drawer>
-
-
  <v-content>
     <v-container fluid>
-    
     <transition name="page" mode="out-in">
         <router-view></router-view>
     </transition>
     </v-container>
   </v-content>
-
-
         <v-footer app>
       <span>Nelson D'Silva &copy; 2019</span>
     </v-footer>

@@ -30,7 +30,7 @@ methods: {
 
 },
   beforeCreate() {
-    this.$http.get("http://127.0.0.1:5000/getBlog").then(function(data)
+    this.$http.get("https://nelsondsilva.pythonanywhere.com//getBlog").then(function(data)
     {
       this.entries = data.body.result;
     })

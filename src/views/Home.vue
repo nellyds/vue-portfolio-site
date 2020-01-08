@@ -2,7 +2,7 @@
   <transition name="fade" mode="out-in">
     <div class="home">
 
-        <img src="@/assets/introMovie.gif" />
+        <img src="@/assets/intro.gif" />
 
 
 </div>

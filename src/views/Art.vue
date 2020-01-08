@@ -27,7 +27,7 @@ export default {
   },
   methods: {},
   mounted() {
-    this.$http.get('http://nelsondsilva.pythonanywhere.com/getArt').then(function(data) {
+    this.$http.get('https://nelsondsilva.pythonanywhere.com/getArt').then(function(data) {
       this.photos = data.body.data;
     });
   }
