@@ -1,36 +1,49 @@
 <template>
   <div id="app">
 <v-app>
-            <v-navigation-drawer
-        absolute
-        permanent
-        right 
-        class="nav"
-      >
-      <v-list-item>
-      <router-link to="/">Home</router-link> 
-      </v-list-item>
-       <v-list-item>
-      <router-link to="/about">About</router-link>
-       </v-list-item>
-       <v-list-item>
-      <router-link to="/art">Art</router-link>
-       </v-list-item>
-      <router-link to="/blog">Blog</router-link>
-      <v-list-item>
-      <router-link to="/work">Work</router-link>
-      </v-list-item>
-            </v-navigation-drawer>
+<v-toolbar dense flat prominent
+color=#c72e5c>   
+<v-toolbar-items v-ripple="{ class: white }">
+
+      <router-link class="clickable" style="color:white;" to="/">Home</router-link> 
+
+      <router-link class="clickable" style="color:white;" to="/about">About</router-link>
+
+      <router-link class="clickable" style="color:white;" to="/art">Art</router-link>
+
+      <router-link class="clickable" style="color:white;" to="/blog">Blog</router-link>
+
+      <router-link class="clickable" style="color:white;" to="/work">Work</router-link>
+
+</v-toolbar-items>
+</v-toolbar>    
+  <v-responsive :aspect-ratio="16/9">
  <v-content>
-    <v-container fluid>
+
     <transition name="page" mode="out-in">
         <router-view></router-view>
     </transition>
-    </v-container>
+
+    
   </v-content>
-        <v-footer app>
-      <span>Nelson D'Silva &copy; 2019</span>
+  </v-responsive>
+        <v-footer app
+        color=#c72e5c
+        >
+          <v-card-text>
+      <span class="footerText">Nelson D'Silva &copy; 2019</span>
+          </v-card-text>
+      <v-divider></v-divider>
+      <div class="icons">
+           <i class="nes-icon twitter is-small icon"></i>
+      <i class="nes-icon instagram is-small icon"></i>
+      <i class="nes-icon github is-small icon"></i>
+      <i class="nes-icon gmail is-small icon"></i>
+      <i class="nes-icon linkedin is-small icon"></i>
+    </div>
+
     </v-footer>
+
     </v-app>
   </div>
   
@@ -41,9 +54,7 @@ export default {
     name: 'App',
         methods: {
       },
-
           created () {
-
     },
 };
 </script>
@@ -51,42 +62,56 @@ export default {
 
 @import url('https://fonts.googleapis.com/css?family=Turret+Road&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+
 #app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
   text-align: center;
-
+  font-family: 'Turret Road';
+  background-image: url('assets/space5.gif');
 
 }
+.footerText{
+  color:white;
+  font-size: 1.5em;
+}
 
-.nav a{
+.icons{
+  margin: auto;
+  padding: 5px;
+}
+.icon{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+ a{
+   text-decoration-color: white;
   font-family: 'hyper';
-
-  color: black;
-  min-height: 25vh;
+  color: white;
   text-decoration: none;
+  max-height:25vh;
+
 
 }
-.container{
-  width: 100vw;
-  height: 100vh;
-}
-.nav a:visited {
-  color:black;
+.nav{
+  color:white;
+  background-color: black;
+     text-decoration-color: white;
+  font-family: 'hyper';
+  color: white;
   text-decoration: none;
+}
+a:visited {
+  color:white;
+  text-decoration-color: white;
   font-weight: bold;
 }
-
-
-.section_title{
-  font-family: 'hyper';
-  text-align:left;
+a:hover{
+  text-decoration: none;
+  color:white;
 }
-.bottom_title{
-  font-family: 'hyper';
-  transform: rotate(180deg);
-  text-align: right;
-}
+
 .fade-enter-active,
 .fade-leave-active {
   transition-duration: 0.3s;
@@ -106,11 +131,19 @@ export default {
   transform: translateY(-30%);
 }
 
-body {
+.clickable:hover {
+  text-shadow: 2px 2px white;
+}
+ 
+.clickable{
 
-  color: #000;
+}
+
+
+body {
   position: relative;
   overflow: hidden;
+
 }
 
 

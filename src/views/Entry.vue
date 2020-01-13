@@ -1,7 +1,9 @@
 <template>
   <div class="entry">
+    <v-responsive :aspect-ratio="16/9">
     <h1>{{ blogItem[0].title }}</h1>
     <h2 v-html = blogItem[0].content> </h2>
+    </v-responsive>
   </div>
 </template>
 

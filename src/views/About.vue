@@ -1,8 +1,11 @@
 <template>
   <div class="about">
+  <v-responsive :aspect-ratio="16/9">
     <h1>{{aboutEntry[0].content}}</h1>
-   
+
+  </v-responsive>
   </div>
+  
 </template>
 
 <script>
@@ -16,7 +19,7 @@ data(){
 methods: {},
 beforeMount(){
     
-    this.$http.get("http://127.0.0.1:5000/getAbout").then(function(data)
+    this.$http.get("https://nelsondsilva.pythonanywhere.com/getAbout").then(function(data)
     {     
         this.aboutEntry = data.body.about;
     })    

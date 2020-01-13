@@ -1,20 +1,20 @@
 <template>
 
   <div class="blog">
+   
     <paginate name="entries" :list="entries">
+       <v-responsive :aspect-ratio="16/9">
       <div class="entry_title" v-for="entry in paginated('entries')" :key="entry.id">
       
      
-     <router-link v-bind:to="'entry/' + entry.id">{{entry.title}}</router-link>
+     <router-link style="color:white" v-bind:to="'entry/' + entry.id">{{entry.title}}</router-link>
       </div>
+       </v-responsive>
     </paginate>
 
-      <paginate-links for="entries" :show-step-links="true"></paginate-links>
+
   <paginate-links for="entries" :limit="5" :show-step-links="true"></paginate-links>
-  <paginate-links for="entries" :simple="{
-        next: ' »',
-        prev: '« '
-      }"></paginate-links>
+    
   </div>
 </template>
 <script>
@@ -29,8 +29,9 @@ data(){
 methods: {
 
 },
-  beforeCreate() {
-    this.$http.get("https://nelsondsilva.pythonanywhere.com//getBlog").then(function(data)
+  beforeMount() {
+    
+    this.$http.get("https://nelsondsilva.pythonanywhere.com/getBlog").then(function(data)
     {
       this.entries = data.body.result;
     })
