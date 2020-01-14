@@ -135,8 +135,8 @@ a:hover{
   text-shadow: 2px 2px white;
 }
  
-.clickable{
-
+.entry_container{
+  width: 50%
 }
 
 

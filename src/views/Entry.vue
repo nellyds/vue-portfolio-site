@@ -1,8 +1,14 @@
 <template>
   <div class="entry">
     <v-responsive :aspect-ratio="16/9">
-    <h1>{{ blogItem[0].title }}</h1>
+  <h1 style="font-family: 'hyper';color:white"> {{ blogItem[0].title }} </h1>
+    <v-responsive :aspect-ratio="8/8" class="entry_container">
+    <div class="nes-container is-dark">
+
     <h2 v-html = blogItem[0].content> </h2>
+</div>
+    </v-responsive>
+
     </v-responsive>
   </div>
 </template>
@@ -27,7 +33,8 @@ export default {
 };
 </script>
 <style>
-.entry{
-  font-family: 'Turret Road'
+.entry_container{
+  width: 70vw;
 }
+
 </style>
