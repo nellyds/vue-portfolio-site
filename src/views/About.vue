@@ -4,7 +4,7 @@
    <div class="about_container">
         <img src="@/assets/profile.gif">
         <div class="nes-container is-dark">
-    <h1>{{aboutEntry[0].content}}</h1>
+    <p class="about_content">{{aboutEntry[0].content}}</p>
 </div>
    </div>    
 
@@ -34,9 +34,18 @@ beforeMount(){
 }
 </script>
 <style scoped>
-.about_container{
-  width:35%;
+img{
+
+  
+  height: 40vh;
+  width: auto;
   margin: auto;
-  font-size: .7em;
+}
+.about_content{
+  font-size:1.2em;
+}
+.about_container{
+  width: 80vw;
+  margin: auto;
 }
 </style>

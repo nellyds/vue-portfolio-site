@@ -1,11 +1,11 @@
 <template>
   <div class="entry">
     <v-responsive :aspect-ratio="16/9">
-  <h1 style="font-family: 'hyper';color:white"> {{ blogItem[0].title }} </h1>
+  <p class="entry_title" style="font-family: 'hyper';color:white"> {{ blogItem[0].title }} </p>
     <v-responsive :aspect-ratio="8/8" class="entry_container">
     <div class="nes-container is-dark">
 
-    <h2 v-html = blogItem[0].content> </h2>
+    <p class="entry_content" v-html = blogItem[0].content> </p>
 </div>
     </v-responsive>
 
@@ -25,7 +25,7 @@ export default {
   beforeMount() {
     var entryId = this.$route.params.id;
     this.$http
-      .get('http://127.0.0.1:5000/getEntry?id=' + entryId)
+      .get('https://nelsondsilva.pythonanywhere.com/getEntry?id=' + entryId)
       .then(function(data) {
         this.blogItem = data.body.entry;
       });
@@ -35,6 +35,14 @@ export default {
 <style>
 .entry_container{
   width: 70vw;
+  margin: auto;
 }
+.entry_title{
+  font-size:1.3em;
+}
+.entry_content{
+  font-size:.8em;
+}
+
 
 </style>

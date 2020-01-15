@@ -1,19 +1,18 @@
 <template>
   <div id="app">
 <v-app>
-<v-toolbar dense flat prominent
+<v-toolbar dense flat app
+
 color=#c72e5c>   
 <v-toolbar-items v-ripple="{ class: white }">
 
       <router-link class="clickable" style="color:white;" to="/">Home</router-link> 
-
+      <span class="spacer" >.</span>
       <router-link class="clickable" style="color:white;" to="/about">About</router-link>
-
+<span class="spacer" >.</span>
       <router-link class="clickable" style="color:white;" to="/art">Art</router-link>
-
+<span class="spacer" >.</span>
       <router-link class="clickable" style="color:white;" to="/blog">Blog</router-link>
-
-      <router-link class="clickable" style="color:white;" to="/work">Work</router-link>
 
 </v-toolbar-items>
 </v-toolbar>    
@@ -35,11 +34,10 @@ color=#c72e5c>
           </v-card-text>
       <v-divider></v-divider>
       <div class="icons">
-           <i class="nes-icon twitter is-small icon"></i>
-      <i class="nes-icon instagram is-small icon"></i>
-      <i class="nes-icon github is-small icon"></i>
-      <i class="nes-icon gmail is-small icon"></i>
-      <i class="nes-icon linkedin is-small icon"></i>
+      <a href="http://www.instagram.com/nellzymandias" ><i class="nes-icon instagram is-small icon"></i></a>
+      <a href="http://github.com/nellyds"><i class="nes-icon github is-small icon"></i></a>
+      <a href="ndsilva822@gmail.com"><i class="nes-icon gmail is-small icon"></i></a>
+      <a href="https://www.linkedin.com/in/nelson-d-silva-b33362156/"><i class="nes-icon linkedin is-small icon"></i></a>
     </div>
 
     </v-footer>
@@ -130,7 +128,9 @@ a:hover{
   opacity: 0;
   transform: translateY(-30%);
 }
-
+.clickable{
+  font-size: 1em;
+}
 .clickable:hover {
   text-shadow: 2px 2px white;
 }

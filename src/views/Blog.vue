@@ -1,19 +1,21 @@
+
+  
 <template>
 
   <div class="blog">
    
-    <paginate name="entries" :list="entries">
-       <v-responsive :aspect-ratio="16/9">
+    <paginate class="entries_container" name="entries" :list="entries">
+
       <div class="entry_title" v-for="entry in paginated('entries')" :key="entry.id">
       
      
      <router-link style="color:white" v-bind:to="'entry/' + entry.id">{{entry.title}}</router-link>
       </div>
-       </v-responsive>
+
     </paginate>
 
 
-  <paginate-links for="entries" :limit="5" :show-step-links="true"></paginate-links>
+  <paginate-links style="color:white" for="entries" :limit="5" :show-step-links="true"></paginate-links>
     
   </div>
 </template>
@@ -27,7 +29,6 @@ data(){
   }
 },
 methods: {
-
 },
   beforeMount() {
     
@@ -41,10 +42,15 @@ methods: {
 </script>
 <style>
 .entry_title{
-  font-family: 'hyper'
+  font-family: 'hyper';
+  font-size: 1.5em;
+}
+.entries_container{
+padding-top: .2em;
+padding-bottom: .2em;
 }
 li{
   list-style: none;
 }
-
 </style>
+

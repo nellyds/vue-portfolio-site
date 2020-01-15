@@ -25,8 +25,9 @@ export default {
 </script>
 <style scoped>
 img{
-  height: 80vh;
+
   width: 100vw;
+  height: auto;
   margin: auto;
 }
 #cf {
