@@ -43,6 +43,11 @@ export default {
 .entry_content{
   font-size:.8em;
 }
+.img{
+    height:auto;
+  width: 25vw;
+  margin: auto;
+}
 
 
 </style>

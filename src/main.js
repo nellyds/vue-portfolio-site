@@ -8,7 +8,7 @@ import VuePaginate from 'vue-paginate';
 Vue.use(VueResource);
 Vue.use(VuePaginate);
 Vue.config.productionTip = false;
-
+require('./components');
 new Vue({
   router,
   store,

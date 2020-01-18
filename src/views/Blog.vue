@@ -3,7 +3,10 @@
 <template>
 
   <div class="blog">
-   
+   <div v-if="loading">
+     <p >Loading </p>
+   </div>
+   <div v-else>
     <paginate class="entries_container" name="entries" :list="entries">
 
       <div class="entry_title" v-for="entry in paginated('entries')" :key="entry.id">
@@ -16,12 +19,15 @@
 
 
   <paginate-links style="color:white" for="entries" :limit="5" :show-step-links="true"></paginate-links>
-    
+   </div>
   </div>
 </template>
 <script>
+
+
 export default {
   name: 'blog',
+
 data(){
   return{
     entries: [],

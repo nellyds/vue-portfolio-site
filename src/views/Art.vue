@@ -1,6 +1,9 @@
 <template v-if="photos.length > 0">
   <div class="art">
-
+   <div v-if="loading">
+     <p >Loading </p>
+   </div>
+   <div v-else>
 <v-responsive :aspect-ratio="16/9">
 
       <v-window v-model="onboarding" vertical>
@@ -30,7 +33,7 @@
 </v-responsive>
 
   </div>
- 
+  </div>
   
 </template>
 <script>
