@@ -1,14 +1,9 @@
 <template v-if="photos.length > 0">
   <div class="art">
-   <div v-if="loading">
-     <p >Loading </p>
-   </div>
-   <div v-else>
-<v-responsive :aspect-ratio="16/9">
 
+<v-responsive :aspect-ratio="16/9">
       <v-window v-model="onboarding" vertical>
       <div class="img_container" v-for="photo in photos" :key="photo.id">
-
       <v-card flat
         class="mx-auto"
         color="grey lighten-4"
@@ -17,28 +12,23 @@
         <v-img 
           :aspect-ratio="16/16"
           :src="photo.images.standard_resolution.url" 
-        >
-          
-        </v-img>
+        /> 
+        
       <v-card flat>
         <p class="caption">{{ photo.caption.text }}</p>
       </v-card>
       </v-card>
-
-</div>
-
+      </div>
       </v-window>
-
-        
 </v-responsive>
 
-  </div>
   </div>
   
 </template>
 <script>
 export default {
   name: 'art',
+
   data() {
     return {
       photos: []

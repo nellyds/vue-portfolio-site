@@ -8,16 +8,10 @@
    </div>
    <div v-else>
     <paginate class="entries_container" name="entries" :list="entries">
-
-      <div class="entry_title" v-for="entry in paginated('entries')" :key="entry.id">
-      
-     
+      <div class="entry_title" v-for="entry in paginated('entries')" :key="entry.id"> 
      <router-link style="color:white" v-bind:to="'entry/' + entry.id">{{entry.title}}</router-link>
       </div>
-
     </paginate>
-
-
   <paginate-links style="color:white" for="entries" :limit="5" :show-step-links="true"></paginate-links>
    </div>
   </div>
@@ -37,7 +31,7 @@ data(){
 methods: {
 },
   beforeMount() {
-    
+    // this.$http.get('http://127.0.0.1:5000/getBlog').then(function(data)
     this.$http.get("https://nelsondsilva.pythonanywhere.com/getBlog").then(function(data)
     {
       this.entries = data.body.result;
