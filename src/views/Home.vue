@@ -1,12 +1,12 @@
 <template>
   <transition name="fade" mode="out-in">
     <div class="home">
-      <v-responsive :aspect-ratio="16/9">
+
       <div id="cf">
         <img class="background" src="@/assets/canvas.jpg" />
         <img id="target" src="@/assets/intro.gif" />
       </div>
-      </v-responsive>
+
 </div>
   </transition>
 </template>
@@ -24,11 +24,10 @@ export default {
 };
 </script>
 <style scoped>
+@media screen and (min-width: 416px){
 img{
-
-  width: 100vw;
-  height: auto;
-  margin: auto;
+text-align: center;
+width: 80%;
 }
 #cf {
   position: relative;
@@ -37,5 +36,21 @@ img{
 #cf img{
   position:absolute;
   left:0;
+}
+}
+@media screen and (max-width: 415px){
+  img{
+    width: 100vw;
+text-align: center;
+
+}
+#cf {
+  position: relative;
+  margin:0 auto;
+}
+#cf img{
+  position:absolute;
+  left:0;
+}
 }
 </style>
