@@ -16,12 +16,12 @@
       >
         <v-img 
           :aspect-ratio="16/16"
-          :src="photo.images.standard_resolution.url" 
+          :src="photo.url" 
         >
           
         </v-img>
       <v-card flat>
-        <p class="caption">{{ photo.caption.text }}</p>
+        <p class="caption">{{ photo.text }}</p>
       </v-card>
       </v-card>
 
@@ -41,15 +41,39 @@ export default {
   name: 'art',
   data() {
     return {
-      photos: []
+      photos: [{
+        url: 'https://res.cloudinary.com/nelsondsilva/image/upload/v1597962491/myArt/IMG_1244.jpg'
+      },
+      {
+url: 'https://res.cloudinary.com/nelsondsilva/image/upload/v1597962454/myArt/0066744A-2BBF-4422-AD1E-48D0BE3033F0.jpg'
+      },
+      {
+url: 'https://res.cloudinary.com/nelsondsilva/image/upload/v1597962453/myArt/B3D167B3-88FE-499B-91AD-97E892893C42.jpg'
+      },
+      {
+        url: 'https://res.cloudinary.com/nelsondsilva/image/upload/v1597962571/myArt/4C137D3B-68A6-4570-993F-BD2697F1DDD8.jpg'
+      },
+      {
+        url:'https://res.cloudinary.com/nelsondsilva/image/upload/v1597962591/myArt/24730F97-03C9-4820-AD82-D7BCD18AFDAC.jpg'
+      },
+      {
+        url: 'https://res.cloudinary.com/nelsondsilva/image/upload/v1597962636/myArt/D4C1735F-2E31-461F-AA36-BC2EDE5E04A1.jpg'
+      },
+      {
+        url: 'https://res.cloudinary.com/nelsondsilva/image/upload/v1597962614/myArt/29F758D3-AC16-40AD-A147-85C130EC01FE.jpg'
+      },
+{
+  url: 'https://res.cloudinary.com/nelsondsilva/image/upload/v1597962870/myArt/sunset.jpg'
+}
+      ]
     };
   },
   methods: {},
-  mounted() {
-    this.$http.get('https://nelsondsilva.pythonanywhere.com/getArt').then(function(data) {
-      this.photos = data.body.data;
-    });
-  }
+  // mounted() {
+  //   this.$http.get('https://nelsondsilva.pythonanywhere.com/getArt').then(function(data) {
+  //     this.photos = data.body.data;
+  //   });
+  // }
 };
 </script>
 
